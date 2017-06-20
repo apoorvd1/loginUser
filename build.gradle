@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'login-user'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext{
+    angularJs = "1.5.4"
+    angularUiRouter = "0.2.18"
+    htmlBoilerBower = "4.3.0"
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    // tag::security[]
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile group: 'org.webjars', name: 'angularjs', version: '1.5.4'
+    compile group: 'org.webjars', name: 'angular-ui-router', version: '0.2.18'
+    compile group: 'org.webjars.bower', name: 'html5-boilerplate-bower', version: '4.3.0'
+
+    // end::security[]
+    testCompile("junit:junit")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.springframework.security:spring-security-test")
+    testCompile("org.fluentlenium:fluentlenium-junit:3.2.0")
+    testCompile("org.seleniumhq.selenium:selenium-firefox-driver:3.2.0")
+    testCompile("io.github.bonigarcia:webdrivermanager:1.7.0")
+}
