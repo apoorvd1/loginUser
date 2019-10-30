@@ -29,7 +29,7 @@
     "karma-jasmine": "^0.3.8",
     "karma-junit-reporter": "^0.4.1",
     "lazypipe":"^1.0.1",
-    "open": "0.0.5",
+    "open": "7.0.0",
     "protractor": "^3.2.2"
   },
   "scripts": {
